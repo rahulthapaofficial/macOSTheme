@@ -45,8 +45,43 @@ a {
   text-decoration: none;
 }
 
+input {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 20px;
+  box-shadow: -6px -6px 16px var(--white-color),
+    6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+    inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+    inset -6px -6px 16px var(--white-color);
+}
+
 input:focus {
   outline: 0;
+}
+
+#lockscreenContainer div div span img {
+  cursor: pointer;
+}
+
+#unlockBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  color: #fff;
+  background: #242527;
+  /* box-shadow: -6px -6px 16px var(--white-color),
+    6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+    inset 6px 6px 16px hsla(var(--hue-color), 30%, 86%, 1),
+    inset -6px -6px 16px var(--white-color); */
+}
+
+#topTaskBarRight div i {
+  cursor: pointer;
 }
 
 .clock__twelve,
@@ -144,6 +179,14 @@ input:focus {
   height: 5rem;
   border-radius: 0.75rem;
   z-index: 1;
+}
+
+.ml-5 {
+  margin-left: 0.5em;
+}
+
+.mr-5 {
+  margin-right: 0.5em;
 }
 
 .ml-10 {

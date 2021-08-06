@@ -127,13 +127,17 @@ function startTime() {
   analogSeconds.style.transform = `rotateZ(${ss}deg)`;
 
   document.querySelector(
+    "#liveLockScreenTime"
+  ).innerHTML = `${hours}:${minutes}`;
+  document.querySelector("#liveLockScreenTimeAMPM").innerHTML = dayType;
+  document.querySelector(
     "#liveTimeClock"
   ).innerHTML = `${liveTimeClock} ${dayType}`;
   document.querySelector(
     "#liveTimeClock2"
   ).innerHTML = `${hours}:${minutes}:${seconds}`;
   document.querySelector("#liveTimeAMPM").innerHTML = dayType;
-  document.querySelector("#clockDate").innerHTML = clockDate;
+  document.querySelector(".clockDate").innerHTML = clockDate;
   setTimeout(startTime, 1000);
 }
 

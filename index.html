@@ -19,12 +19,21 @@
             <div
                 style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #ECECF3;">
                 <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span style="font-family: 'digital-7';">
+                        <span style="position: absolute; color: #dddddd; font-size: 50px;">88:88</span>
+                        <span id="liveLockScreenTime" style="position: relative; z-index: 100; font-size: 50px;"></span>
+                        <span style="font-size: 15px;" id="liveLockScreenTimeAMPM"></span>
+                    </span>
+                    <p class="clockDate"></p>
                     <span
-                        style="height: 100px; width: 100px; border-radius: 50%; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);"></span>
-                    <div style="margin-top: 20px;">
-                        <input type="password" placeholder="Enter Password"
-                            style="padding: 10px 20px; border: 0; border-radius: 20px; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);">
-                        <span id="unlockBtn"><i class='bx bxs-right-arrow-circle'></i></span>
+                        style="display: flex; justify-content: center; align-items: center; margin-top: 50px; height: 100px; width: 100px; border-radius: 50%; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);">
+                        <img src="assets/images/apple-logo.svg" height="40px" width="40px">
+                    </span>
+                    <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0 100px 0;">
+                        <input id="password" type="password" placeholder="Enter Password" class="mr-5">
+                        <span id="unlockBtn">
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -42,8 +51,8 @@
             <div>
                 <p>नेपालमा बनेको</p>
             </div>
-            <div style="display: flex;">
-                <div id="lockBtn" class="mr-10"><i class="bx bxs-lock"></i></div>
+            <div id="topTaskBarRight" style="display: flex;">
+                <div id="lockBtn" class="mr-10" title="Lock"><i class="bx bxs-lock"></i></div>
                 <div class="mr-10"><i class="bx bxs-cog"></i></div>
                 <div class="mr-10"><i class='bx bxs-battery-charging'></i></div>
                 <div class="mr-10"><i class='bx bx-search-alt-2'></i></div>
@@ -84,8 +93,7 @@
                         style="display: flex; justify-content: space-between; font-family: 'digital-7'; color:#fff; width: 100%; font-size: 15px;">
                     </div>
                     <p style="font-family: 'digital-7'; color:#fff; margin: 10px 0 0 0">
-                        <span id="placeholder"
-                            style="position: absolute; z-index: 50; color: #292929; font-size: 80px;">88:88:88</span>
+                        <span style="position: absolute; z-index: 50; color: #292929; font-size: 80px;">88:88:88</span>
                         <span id="liveTimeClock2" style="position: relative; z-index: 100; font-size: 80px;"></span>
                         <span style="color:#fff; font-size: 15px;" id="liveTimeAMPM"></span>
                     </p>
@@ -103,6 +111,7 @@
                 <div class="mr-10">
                     <img src="assets/images/finder.png" alt="" srcset="">
                 </div>
+                <div class="mr-10"><img src="assets/images/terminal.png" alt="" srcset=""></div>
                 <div class="mr-10"><img src="assets/images/safari.png" alt="" srcset=""></div>
                 <div class="mr-10"><img src="assets/images/brave.png" alt="" srcset=""></div>
                 <div class="mr-10"><img src="assets/images/vs-code.png" alt="" srcset=""></div>
