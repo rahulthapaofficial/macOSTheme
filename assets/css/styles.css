@@ -1,0 +1,196 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --hue-color: 240;
+  --first-color: hsl(var(--hue-color), 53%, 49%);
+  --title-color: hsl(var(--hue-color), 53%, 15%);
+  --text-color: hsl(var(--hue-color), 12%, 35%);
+  --text-color-light: hsl(var(--hue-color), 12%, 65%);
+  --white-color: #fff;
+  --body-color: hsl(var(--hue-color), 24%, 94%);
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 3rem;
+  --small-font-size: 0.813rem;
+  --smaller-font-size: 0.75rem;
+  --tiny-font-size: 0.625rem;
+  --font-medium: 500;
+  --mb-0-25: 0.25rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2-5: 2.5rem;
+  --z-normal: 1;
+  --z-tooltip: 10;
+}
+
+/*DIGITAL CLOCK FONT*/
+
+@font-face {
+  font-family: "digital-7";
+  src: url("../fonts/digital-7.ttf");
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  background: #242527;
+}
+
+a {
+  text-decoration: none;
+}
+
+input:focus {
+  outline: 0;
+}
+
+.clock__twelve,
+.clock__three,
+.clock__six,
+.clock__nine {
+  position: absolute;
+  width: 1rem;
+  height: 1px;
+  background-color: var(--text-color-light);
+}
+
+.clock__twelve,
+.clock__six {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.clock__twelve {
+  top: 1.25rem;
+  left: 50%;
+}
+
+.clock__three {
+  top: 50%;
+  right: 0.75rem;
+}
+
+.clock__six {
+  bottom: 1.25rem;
+  left: 50%;
+}
+
+.clock__nine {
+  left: 0.75rem;
+  top: 50%;
+}
+
+.clock_rounder {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  border: 2px solid var(--body-color);
+  z-index: var(--z-tooltip);
+}
+
+.clock_hour,
+.clock_minutes,
+.clock_seconds {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.clock_hour {
+  width: 105px;
+  height: 105px;
+}
+
+.clock_hour::before {
+  content: "";
+  position: absolute;
+  background-color: #cc471b;
+  width: 0.25rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.clock_minutes {
+  width: 136px;
+  height: 136px;
+}
+
+.clock_minutes::before {
+  content: "";
+  position: absolute;
+  background-color: #cc471b;
+  width: 0.25rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.clock_seconds {
+  width: 130px;
+  height: 130px;
+}
+
+.clock_seconds::before {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 0.125rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.ml-10 {
+  margin-left: 1em;
+}
+
+.mr-10 {
+  margin-right: 1em;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  color: grey;
+}
+
+#footerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  color: #fff;
+}
+
+#footerContainer #footer {
+  display: flex;
+  justify-content: center;
+  background: rgba(102, 102, 102, 0.5);
+  position: fixed;
+  bottom: 0;
+  padding: 0 0 0 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+#footerContainer #footer div img {
+  cursor: pointer;
+  margin-top: 5px;
+  height: 30px;
+}
+
+#footerContainer #footer div img:hover {
+  transform: scale(1.5);
+  margin: 0 1em;
+}

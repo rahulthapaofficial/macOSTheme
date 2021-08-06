@@ -10,207 +10,27 @@
     <link rel="icon" type="image/png" href="assets/images/logo/mac-os-logo.png" />
     <!--==================== BOXICONS ====================-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    <style>
-        /*=============== GOOGLE FONTS ===============*/
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
-
-        :root {
-            --hue-color: 240;
-            --first-color: hsl(var(--hue-color), 53%, 49%);
-            --title-color: hsl(var(--hue-color), 53%, 15%);
-            --text-color: hsl(var(--hue-color), 12%, 35%);
-            --text-color-light: hsl(var(--hue-color), 12%, 65%);
-            --white-color: #FFF;
-            --body-color: hsl(var(--hue-color), 24%, 94%);
-            --body-font: 'Poppins', sans-serif;
-            --biggest-font-size: 3rem;
-            --small-font-size: .813rem;
-            --smaller-font-size: .75rem;
-            --tiny-font-size: .625rem;
-            --font-medium: 500;
-            --mb-0-25: .25rem;
-            --mb-1: 1rem;
-            --mb-1-5: 1.5rem;
-            --mb-2-5: 2.5rem;
-            --z-normal: 1;
-            --z-tooltip: 10;
-        }
-
-        /*DIGITAL CLOCK FONT*/
-
-        @font-face {
-            font-family: 'digital-7';
-            src: url('assets/fonts/digital-7.ttf');
-        }
-
-        * {
-            margin: 0;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            font-size: 12px;
-            background: #242527;
-
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .clock__twelve,
-        .clock__three,
-        .clock__six,
-        .clock__nine {
-            position: absolute;
-            width: 1rem;
-            height: 1px;
-            background-color: var(--text-color-light);
-        }
-
-        .clock__twelve,
-        .clock__six {
-            transform: translateX(-50%) rotate(90deg);
-        }
-
-        .clock__twelve {
-            top: 1.25rem;
-            left: 50%;
-        }
-
-        .clock__three {
-            top: 50%;
-            right: 0.75rem;
-        }
-
-        .clock__six {
-            bottom: 1.25rem;
-            left: 50%;
-        }
-
-        .clock__nine {
-            left: 0.75rem;
-            top: 50%;
-        }
-
-        .clock_rounder {
-            width: 0.75rem;
-            height: 0.75rem;
-            background-color: var(--first-color);
-            border-radius: 50%;
-            border: 2px solid var(--body-color);
-            z-index: var(--z-tooltip);
-        }
-
-        .clock_hour,
-        .clock_minutes,
-        .clock_seconds {
-            position: absolute;
-            display: flex;
-            justify-content: center;
-        }
-
-        .clock_hour {
-            width: 105px;
-            height: 105px;
-        }
-
-        .clock_hour::before {
-            content: "";
-            position: absolute;
-            background-color: #CC471B;
-            width: 0.25rem;
-            height: 3rem;
-            border-radius: 0.75rem;
-            z-index: 1;
-        }
-
-        .clock_minutes {
-            width: 136px;
-            height: 136px;
-        }
-
-        .clock_minutes::before {
-            content: "";
-            position: absolute;
-            background-color: #CC471B;
-            width: 0.25rem;
-            height: 4rem;
-            border-radius: 0.75rem;
-            z-index: 1;
-        }
-
-        .clock_seconds {
-            width: 130px;
-            height: 130px;
-        }
-
-        .clock_seconds::before {
-            content: "";
-            position: absolute;
-            background-color: #fff;
-            width: 0.125rem;
-            height: 5rem;
-            border-radius: 0.75rem;
-            z-index: 1;
-        }
-
-        .ml-10 {
-            margin-left: 1em;
-        }
-
-        .mr-10 {
-            margin-right: 1em;
-        }
-
-        .color-white {
-            color: #fff;
-        }
-
-        .menu-item {
-            cursor: pointer;
-        }
-
-        .menu-item:hover {
-            color: grey;
-        }
-
-        #footerContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            align-content: center;
-            color: #fff;
-        }
-
-        #footerContainer #footer {
-            display: flex;
-            justify-content: center;
-            background: rgba(102, 102, 102, .5);
-            position: fixed;
-            bottom: 0;
-            padding: 0 0 0 10px;
-            border-radius: 10px 10px 0 0;
-        }
-
-        #footerContainer #footer div img {
-            cursor: pointer;
-            margin-top: 5px;
-            height: 30px;
-        }
-
-        #footerContainer #footer div img:hover {
-            transform: scale(1.5);
-            margin: 0 1em;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     <div>
+        <div id="lockscreenContainer" style="position: fixed; z-index: 101; width: 100%;">
+            <div
+                style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #ECECF3;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span
+                        style="height: 100px; width: 100px; border-radius: 50%; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);"></span>
+                    <div style="margin-top: 20px;">
+                        <input type="password" placeholder="Enter Password"
+                            style="padding: 10px 20px; border: 0; border-radius: 20px; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);">
+                        <span id="unlockBtn"><i class='bx bxs-right-arrow-circle'></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div
-            style="display: flex; justify-content: space-between; align-items: center; height: 3.5vh; background: #ECECF3; padding: 0 10px">
+            style="display: flex; justify-content: space-between; align-items: center; height: 3.5vh; background: #ECECF3; padding: 0 10px;">
             <div style="display: flex; justify-content: space-around; align-content: center;">
                 <a><img src="assets/images/apple-logo.svg" alt="" height="14px"></a>
                 <a class="menu-item ml-10">File</a>
@@ -223,6 +43,7 @@
                 <p>नेपालमा बनेको</p>
             </div>
             <div style="display: flex;">
+                <div id="lockBtn" class="mr-10"><i class="bx bxs-lock"></i></div>
                 <div class="mr-10"><i class="bx bxs-cog"></i></div>
                 <div class="mr-10"><i class='bx bxs-battery-charging'></i></div>
                 <div class="mr-10"><i class='bx bx-search-alt-2'></i></div>
@@ -294,153 +115,10 @@
             </div>
         </div>
     </div>
-    <script>
-        let months = [
-            {
-                0: 'Jan',
-                1: 'January',
-            }, {
-                0: 'Feb',
-                1: 'Februry'
-            }, {
-                2: 'Mar',
-                2: 'March',
-            },
-            {
-                3: 'Apr',
-                3: 'April',
-            },
-            {
-                4: 'May',
-                4: 'May',
-            },
-            {
-                5: 'Jun',
-                5: 'June',
-            },
-            {
-                6: 'Jul',
-                6: 'July',
-            },
-            {
-                0: 'Aug',
-                1: 'August',
-            },
-            {
-                8: 'Sep',
-                8: 'September',
-            },
-            {
-                9: 'Oct',
-                9: 'October',
-            },
-            {
-                0: 'Nov',
-                1: 'November',
-            },
-            {
-                0: 'Dec',
-                1: 'December',
-            }
-        ];
-        let weeks = [
-            {
-                0: 'Sun',
-                1: 'Sunday'
-            },
-            {
-                0: 'Mon',
-                1: 'Monday',
-            },
-            {
-                0: 'Tue',
-                1: 'Tuesday',
-            },
-            {
-                0: 'Wed',
-                1: 'Wednesday',
-            },
-            {
-                0: 'Thu',
-                1: 'Thursday',
-            },
-            {
-                0: 'Fri',
-                1: 'Friday',
-            },
-            {
-                0: 'Sat',
-                1: 'Saturday',
-            }
-        ]
-
-        const analogHour = document.querySelector("#clock-hour"),
-            analogMinutes = document.querySelector("#clock-minutes"),
-            analogSeconds = document.querySelector("#clock-seconds"),
-            weekDays = document.querySelector("#weekDays");
-
-        weeks.forEach(function (day, index) {
-            var node = document.createElement("span");
-            var textnode = document.createTextNode(day[0]);
-            node.appendChild(textnode);
-            node.style.color = checkTodayWeekDay() == index ? "#fff" : '#505050'
-            weekDays.appendChild(node)
-        });
-
-        function checkTodayWeekDay() {
-            let today = new Date();
-            let weekDay = today.getDate()
-            return weekDay - 1;
-        }
-
-        function startTime() {
-            let today = new Date();
-            let year = today.getFullYear()
-            let month = today.getMonth()
-            let day = today.getDate()
-            let weekDay = today.getDate()
-            console.log(`${year} ${months[month]} ${day} ${weeks[weekDay]}`)
-            let hours = today.getHours()
-            let minutes = checkTime(today.getMinutes())
-            let seconds = checkTime(today.getSeconds())
-            let dayType = "AM"
-            if (hours > 11) {
-                dayType = "PM"
-            }
-            else
-                dayType = "AM"
-            hours = checkTime(hourFormat(today.getHours()))
-            let topBarDate = `${weeks[weekDay - 1][0]} ${months[month][0]} ${day}`
-            let liveTimeClock = `<span class="mr-10" title="${topBarDate}">${topBarDate}</span> ${hours}:${minutes}`
-            let clockDate = `${weeks[weekDay - 1][1]}, ${day} ${months[month][0]}, ${year}`;
-
-            let hh = today.getHours() * 30,
-                mm = today.getMinutes() * 6,
-                ss = today.getSeconds() * 6;
-            analogHour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
-            analogMinutes.style.transform = `rotateZ(${mm}deg)`;
-            analogSeconds.style.transform = `rotateZ(${ss}deg)`;
-
-            document.querySelector('#liveTimeClock').innerHTML = `${liveTimeClock} ${dayType}`
-            document.querySelector('#liveTimeClock2').innerHTML = `${hours}:${minutes}:${seconds}`
-            document.querySelector('#liveTimeAMPM').innerHTML = dayType
-            document.querySelector('#clockDate').innerHTML = clockDate
-            setTimeout(startTime, 1000);
-        }
-
-        function checkTime(time) {
-            if (time < 10)
-                time = `0${time}`
-            return time
-        }
-
-        function hourFormat(hour) {
-            if (hour > 12)
-                hour = hour - 12
-            return hour
-        }
-        startTime()
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/lockscreen.js"></script>
 </body>
 
 </html>
