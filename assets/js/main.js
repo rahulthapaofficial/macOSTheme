@@ -130,6 +130,7 @@ function startTime() {
     "#liveLockScreenTime"
   ).innerHTML = `${hours}:${minutes}`;
   document.querySelector("#liveLockScreenTimeAMPM").innerHTML = dayType;
+  document.querySelector("#lockscreenClockDate").innerHTML = clockDate;
   document.querySelector(
     "#liveTimeClock"
   ).innerHTML = `${liveTimeClock} ${dayType}`;
@@ -137,7 +138,7 @@ function startTime() {
     "#liveTimeClock2"
   ).innerHTML = `${hours}:${minutes}:${seconds}`;
   document.querySelector("#liveTimeAMPM").innerHTML = dayType;
-  document.querySelector(".clockDate").innerHTML = clockDate;
+  document.querySelector("#clockDate").innerHTML = clockDate;
   setTimeout(startTime, 1000);
 }
 

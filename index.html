@@ -24,11 +24,14 @@
                         <span id="liveLockScreenTime" style="position: relative; z-index: 100; font-size: 50px;"></span>
                         <span style="font-size: 15px;" id="liveLockScreenTimeAMPM"></span>
                     </span>
-                    <p class="clockDate" style="margin-top: 10px""></p>
+                    <p id="lockscreenClockDate" style="margin-top: 10px""></p>
                     <span
-                        style="display: flex; justify-content: center; align-items: center; margin-top: 50px; height: 100px; width: 100px; border-radius: 50%; box-shadow:-6px -6px 16px var(--white-color),6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset -6px -6px 16px var(--white-color);">
+                        style=" display: flex; justify-content: center; align-items: center; margin-top: 50px; height:
+                        100px; width: 100px; border-radius: 50%; box-shadow:-6px -6px 16px var(--white-color),6px 6px
+                        16px hsla(var(--hue-color),30%,86%,1),inset 6px 6px 16px hsla(var(--hue-color),30%,86%,1),inset
+                        -6px -6px 16px var(--white-color);">
                         <img src="assets/images/apple-logo.svg" height="40px" width="40px">
-                    </span>
+                        </span>
                     <div style="display: flex; justify-content: center; align-items: center; margin: 20px 0 100px 0;">
                         <input id="password" type="password" placeholder="Enter Password" class="mr-5">
                         <span id="unlockBtn">
@@ -128,6 +131,32 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/lockscreen.js"></script>
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "1168476816602511");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 </body>
 
 </html>
