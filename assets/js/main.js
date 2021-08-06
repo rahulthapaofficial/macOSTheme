@@ -8,36 +8,36 @@ let months = [
     1: "Februry",
   },
   {
-    2: "Mar",
-    2: "March",
+    0: "Mar",
+    1: "March",
   },
   {
-    3: "Apr",
-    3: "April",
+    0: "Apr",
+    1: "April",
   },
   {
-    4: "May",
-    4: "May",
+    0: "May",
+    1: "May",
   },
   {
-    5: "Jun",
-    5: "June",
+    0: "Jun",
+    1: "June",
   },
   {
-    6: "Jul",
-    6: "July",
+    0: "Jul",
+    1: "July",
   },
   {
     0: "Aug",
     1: "August",
   },
   {
-    8: "Sep",
-    8: "September",
+    0: "Sep",
+    1: "September",
   },
   {
-    9: "Oct",
-    9: "October",
+    0: "Oct",
+    1: "October",
   },
   {
     0: "Nov",
@@ -104,7 +104,6 @@ function startTime() {
   let month = today.getMonth();
   let day = today.getDate();
   let weekDay = today.getDate();
-  console.log(`${year} ${months[month]} ${day} ${weeks[weekDay]}`);
   let hours = today.getHours();
   let minutes = checkTime(today.getMinutes());
   let seconds = checkTime(today.getSeconds());
