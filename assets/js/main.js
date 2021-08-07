@@ -79,6 +79,20 @@ let weeks = [
   },
 ];
 
+const terminalCommands = {
+  clear: "To clear the screen",
+  ipconfig: "To get Public IP",
+  time: "To get Current Time",
+  exit: "To close terminal",
+};
+// document.addEventListener(
+//   "contextmenu",
+//   (event) => {
+//     event.preventDefault();
+//   },
+//   false
+// );
+
 const analogHour = document.querySelector("#clock-hour"),
   analogMinutes = document.querySelector("#clock-minutes"),
   analogSeconds = document.querySelector("#clock-seconds"),
@@ -103,7 +117,7 @@ function startTime() {
   let year = today.getFullYear();
   let month = today.getMonth();
   let day = today.getDate();
-  let weekDay = today.getDate();
+  let weekDay = today.getDay();
   let hours = today.getHours();
   let minutes = checkTime(today.getMinutes());
   let seconds = checkTime(today.getSeconds());
@@ -112,11 +126,9 @@ function startTime() {
     dayType = "PM";
   } else dayType = "AM";
   hours = checkTime(hourFormat(today.getHours()));
-  let topBarDate = `${weeks[weekDay - 1][0]} ${months[month][0]} ${day}`;
+  let topBarDate = `${weeks[weekDay][0]} ${months[month][0]} ${day}`;
   let liveTimeClock = `<span class="mr-10" title="${topBarDate}">${topBarDate}</span> ${hours}:${minutes}`;
-  let clockDate = `${weeks[weekDay - 1][1]}, ${day} ${
-    months[month][0]
-  }, ${year}`;
+  let clockDate = `${weeks[weekDay][1]}, ${day} ${months[month][0]}, ${year}`;
 
   let hh = today.getHours() * 30,
     mm = today.getMinutes() * 6,
@@ -148,6 +160,7 @@ function checkTime(time) {
 
 function hourFormat(hour) {
   if (hour > 12) hour = hour - 12;
+  else if (hour === 0) hour = 12;
   return hour;
 }
 startTime();

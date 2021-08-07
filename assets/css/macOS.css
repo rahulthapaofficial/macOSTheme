@@ -1,0 +1,269 @@
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+.winbox.modal:after,
+.winbox.modal:before {
+  content: "";
+}
+
+#terminalBox {
+  display: none;
+  transform: translate(0px, 0px);
+  z-index: 150;
+  width: 650px;
+  height: 428px;
+}
+
+.winbox {
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  right: 25%;
+  border-radius: 8px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: width 0.3s, height 0.3s, transform 0.3s;
+  transition-timing-function: cubic-bezier(0.3, 1, 0.3, 1);
+  will-change: transform, width, height;
+  contain: layout size;
+  touch-action: none;
+}
+.wb-body,
+.wb-header {
+  position: absolute;
+  left: 0;
+}
+.max,
+.no-shadow {
+  box-shadow: none;
+}
+
+.wb-header {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+  background: #ececf3;
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.wb-body {
+  top: 28px;
+  overflow: auto;
+  width: 630px;
+  height: 380px;
+  background: rgba(36, 37, 39, 0.96);
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  will-change: contents;
+  color: green;
+  padding: 10px;
+}
+
+.wb-title {
+  padding-left: 30%;
+  cursor: default;
+}
+.wb-n,
+.wb-s {
+  height: 10px;
+  position: absolute;
+  left: 0;
+}
+.wb-n {
+  top: -5px;
+  right: 0;
+  cursor: n-resize;
+}
+.wb-e {
+  position: absolute;
+  top: 0;
+  right: -5px;
+  bottom: 0;
+  width: 10px;
+  cursor: w-resize;
+}
+.wb-s,
+.wb-se,
+.wb-sw {
+  bottom: -5px;
+}
+.wb-s {
+  right: 0;
+  cursor: n-resize;
+}
+.wb-w {
+  position: absolute;
+  top: 0;
+  left: -5px;
+  bottom: 0;
+  width: 10px;
+  cursor: w-resize;
+}
+.wb-ne,
+.wb-nw,
+.wb-sw {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+}
+.wb-nw {
+  top: -5px;
+  left: -5px;
+  cursor: nw-resize;
+}
+.wb-ne,
+.wb-sw {
+  cursor: ne-resize;
+}
+.wb-ne {
+  top: -5px;
+  right: -5px;
+}
+.wb-sw {
+  left: -5px;
+}
+.wb-se {
+  position: absolute;
+  right: -5px;
+  width: 15px;
+  height: 15px;
+  cursor: nw-resize;
+}
+
+.wb-icon {
+  display: flex;
+  justify-content: space-around;
+  width: 8%;
+}
+.wb-icon {
+  cursor: pointer;
+  padding: 8px;
+}
+
+.mb-close-icon,
+.mb-min-icon,
+.mb-max-icon {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.wb-close,
+.wb-min,
+.wb-max {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  color: #3f3f3f;
+  font-weight: bold;
+}
+
+.wb-close:hover .mb-close-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wb-min:hover .mb-min-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wb-max:hover .mb-max-icon {
+  visibility: visible;
+  opacity: 1;
+}
+
+.no-close .wb-close,
+.no-full .wb-full,
+.no-header .wb-header,
+.no-max .wb-max,
+.no-min .wb-min,
+.no-resize .wb-body ~ div,
+.winbox.min .wb-body > *,
+.winbox.min .wb-full,
+.winbox.min .wb-min,
+.winbox.modal .wb-full,
+.winbox.modal .wb-max,
+.winbox.modal .wb-min {
+  display: none;
+}
+.winbox.max .wb-title,
+.winbox.min .wb-title {
+  cursor: default;
+}
+.wb-min {
+  height: 12px;
+  width: 12px;
+  background: rgb(255, 172, 17);
+  border-radius: 50%;
+}
+.wb-max {
+  height: 12px;
+  width: 12px;
+  background: rgb(11, 160, 11);
+  border-radius: 50%;
+}
+.wb-close {
+  height: 12px;
+  width: 12px;
+  background: #d34c4cda;
+  border-radius: 50%;
+}
+.wb-full {
+  height: 10px;
+  width: 10px;
+  background: green;
+  border-radius: 50%;
+}
+.winbox.max .wb-body ~ div,
+.winbox.min .wb-body ~ div,
+.winbox.modal .wb-body ~ div,
+.winbox.modal .wb-title,
+body.wb-drag iframe {
+  pointer-events: none;
+}
+.max .wb-body {
+  margin: 0 !important;
+}
+.winbox iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.no-animation,
+body.wb-drag .winbox {
+  transition: none;
+}
+.winbox.modal:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+.winbox.modal:after {
+  position: absolute;
+  top: -100vh;
+  left: -100vw;
+  right: -100vw;
+  bottom: -100vh;
+  background: #0d1117;
+  animation: fade-in 0.2s ease-out forwards;
+  z-index: -1;
+}
+.no-header .wb-body {
+  top: 0;
+}
+.no-move:not(.min) .wb-title {
+  pointer-events: none;
+}

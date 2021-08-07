@@ -1,0 +1,14 @@
+.terminalCommandInput {
+  border: 0 hidden;
+  outline: none;
+  display: inline-flex;
+  background: transparent;
+  color: #fff;
+  width: 60%;
+  letter-spacing: 1px;
+  font-size: 11px;
+}
+
+.terminalCommandHelp {
+  color: #168dcc;
+}

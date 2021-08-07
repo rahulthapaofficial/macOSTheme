@@ -11,11 +11,14 @@
     <!--==================== BOXICONS ====================-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/macOS.css">
+    <link rel="stylesheet" href="assets/css/terminal.css">
+    <link rel="stylesheet" href="assets/css/docker-app.css">
 </head>
 
 <body>
     <div>
-        <div id="lockscreenContainer" style="position: fixed; z-index: 101; width: 100%;">
+        <div id="lockscreenContainer" style="position: fixed; z-index: 200; width: 100%;">
             <div
                 style="display: flex; justify-content: center; align-items: center; height: 100vh; background: #ECECF3;">
                 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -65,7 +68,8 @@
                 </div>
             </div>
         </div>
-        <div style="display: flex; justify-content: space-around; align-items: center; height: 96.5vh;">
+        <div id="desktopSection"
+            style="display: flex; justify-content: space-around; align-items: center; height: 96.5vh;">
             <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
                 <div style="border-radius: 20px; border: 1px solid #fff; padding: 5px 10px; margin-bottom: 50px">
                     <a style="color:#fff;" href="https://github.com/rahulthapaofficial" target="_blank">GitHub</a>
@@ -138,26 +142,60 @@
         </div>
         <div id="footerContainer">
             <div id="footer">
-                <div class="mr-10">
-                    <img src="assets/images/finder.png" alt="" srcset="">
+                <div class="mr-10 dockerApps"><img src="assets/images/finder.png"><span></span></div>
+                <div id="terminalApp" class="mr-10 dockerApps">
+                    <img src="assets/images/terminal.png" style="margin-bottom: 0;">
+                    <p></p>
                 </div>
-                <div class="mr-10"><img src="assets/images/terminal.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/safari.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/brave.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/vs-code.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/calendar.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/music.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/messages.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/folder.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/settings.png" alt="" srcset=""></div>
-                <div class="mr-10"><img src="assets/images/recyclebin.png" alt="" srcset=""></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/safari.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/brave.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/vs-code.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/calendar.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/music.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/messages.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/folder.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/settings.png"><span></span></div>
+                <div class="mr-10 dockerApps"><img src="assets/images/recyclebin.png"><span></span></div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="assets/js/library/jquery.min.js"></script>
+    <script src="assets/js/library/jquery-ui.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/lockscreen.js"></script>
+    <script src="assets/js/docker-apps.js"></script>
+    <script src="assets/js/terminal.js"></script>
+    <div id="terminalBox" class="winbox modern focus">
+        <div class="wb-header">
+            <div class="wb-icon">
+                <span class="wb-close">
+                    <span class="mb-close-icon">&times;</span>
+                </span>
+                <span class="wb-min">
+                    <span class="mb-min-icon">&minus;</span>
+                </span>
+                <span class="wb-max">
+                    <span class="mb-max-icon" style="font-size: 8px; transform: rotateY(0deg) rotate(-45deg);">
+                        <>
+                    </span>
+                </span>
+            </div>
+            <div class="wb-title">rahulthapa@macOS:~</div>
+        </div>
+        <div class="wb-body">
+            <div id="terminalContent">
+            </div>
+        </div>
+        <div class="wb-n"></div>
+        <div class="wb-s"></div>
+        <div class="wb-w"></div>
+        <div class="wb-e"></div>
+        <div class="wb-nw"></div>
+        <div class="wb-ne"></div>
+        <div class="wb-se"></div>
+        <div class="wb-sw"></div>
+    </div>
+    <script src="assets/js/macOS.js"></script>
 </body>
 
 </html>

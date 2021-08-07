@@ -1,0 +1,7 @@
+.dockerApps p.active {
+  height: 2px;
+  width: 2px;
+  border-radius: 50%;
+  background: #fff;
+  margin: -5px 0 3px 12px;
+}
