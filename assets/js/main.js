@@ -79,19 +79,59 @@ let weeks = [
   },
 ];
 
+const nextTerminalLine = `<p>rahulthapa@macOS:~<input type="text" id="userCommand" class="terminalCommandInput ml-5" autofocus autocomplete="off"></p>`;
+
+const terminalHelpText =
+  "<p style='color: #168dcc'>Use :help to show macOS commands</p>";
+
+const userInfoField = `<p>userInfo> What is your Name?:<input type="text" id="userName" class="terminalCommandInput ml-5" autofocus autocomplete="off"></p>`;
+
+const terminalMapSection = `<div id="terminalMapSection">
+      <div id="terminalMap"></div>
+      <input type="hidden" class="form-control" id="lat">
+      <input type="hidden" class="form-control" id="lng">
+  </div>`;
+
 const terminalCommands = {
   clear: "To clear the screen",
   ipconfig: "To get Public IP",
   time: "To get Current Time",
+  whoami: "To get Your Information",
+  whereami: "To get Your Current Location",
   exit: "To close terminal",
 };
-// document.addEventListener(
-//   "contextmenu",
-//   (event) => {
-//     event.preventDefault();
-//   },
-//   false
-// );
+
+document.addEventListener(
+  "contextmenu",
+  (event) => {
+    event.preventDefault();
+  },
+  false
+);
+
+const initialUserInfo = localStorage.getItem("userInfo")
+  ? JSON.parse(localStorage.getItem("userInfo"))
+  : {};
+
+const initialUserCommands = localStorage.getItem("userCommands")
+  ? JSON.parse(localStorage.getItem("userCommands"))
+  : {};
+
+const storeUserInfo = (userInfo) => {
+  localStorage.setItem(
+    "userInfo",
+    JSON.stringify(Object.keys(userInfo).length > 0 ? userInfo : {})
+  );
+};
+
+const storeUserCommands = (command) => {
+  localStorage.setItem(
+    "userCommands",
+    JSON.stringify(Object.keys(command).length > 0 ? command : [])
+  );
+};
+storeUserInfo(initialUserInfo);
+storeUserCommands(initialUserCommands);
 
 const analogHour = document.querySelector("#clock-hour"),
   analogMinutes = document.querySelector("#clock-minutes"),

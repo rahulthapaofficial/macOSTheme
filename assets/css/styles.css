@@ -284,7 +284,13 @@ input:focus {
 }
 
 .text-danger {
-  color: #dc4343;
+  color: #CC471B;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.text-warning {
+  color: #eba014;
   letter-spacing: 1px;
 }
 

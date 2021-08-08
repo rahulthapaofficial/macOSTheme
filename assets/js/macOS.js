@@ -4,7 +4,8 @@ $(function () {
 
   $(".wb-close").click(function () {
     $("#terminalBox").css("display", "none");
-    $('#terminalApp').find("p").removeClass("active");
+    $("#terminalApp").find("p").removeClass("active");
     $("#terminalContent").html("");
+    storeUserCommands([]);
   });
 });

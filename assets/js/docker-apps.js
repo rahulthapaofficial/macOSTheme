@@ -27,10 +27,8 @@ function terminalTypeWriter() {
     i++;
     setTimeout(terminalTypeWriter, 30);
   } else {
-    let terminalHelpText =
-      "<p style='color: #168dcc'>Use :help to show macOS commands</p>";
     $("#terminalContent").append(terminalHelpText);
-    let nextLine = `<p>rahulthapa@macOS:~<input type="text" class="terminalCommandInput ml-5" autofocus autocomplete="off"></p>`;
-    $("#terminalContent").append(nextLine);
+    $("#terminalContent").append(nextTerminalLine);
+    document.querySelector("#userCommand").focus();
   }
 }

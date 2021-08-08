@@ -16,12 +16,12 @@
   transform: translate(0px, 0px);
   z-index: 150;
   width: 650px;
-  height: 428px;
+  height: 500px;
 }
 
 .winbox {
   position: fixed;
-  top: 20%;
+  top: 14%;
   left: 25%;
   right: 25%;
   border-radius: 8px;
@@ -56,7 +56,7 @@
   top: 28px;
   overflow: auto;
   width: 630px;
-  height: 380px;
+  height: 452px;
   background: rgba(36, 37, 39, 0.96);
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch;
