@@ -48,6 +48,7 @@ let months = [
     1: "December",
   },
 ];
+
 let weeks = [
   {
     0: "Sun",
@@ -148,8 +149,8 @@ weeks.forEach(function (day, index) {
 
 function checkTodayWeekDay() {
   let today = new Date();
-  let weekDay = today.getDate();
-  return weekDay - 1;
+  let weekDay = today.getDay();
+  return weekDay;
 }
 
 function startTime() {
