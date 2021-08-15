@@ -19,6 +19,21 @@
   height: 500px;
 }
 
+@keyframes open {
+  0% {
+    bottom: 0%;
+    height: 160px;
+    width: 125px;
+  }
+  100% {
+    top: 14%;
+    left: 25%;
+    right: 25%;
+    width: 650px;
+    height: 500px;
+  }
+}
+
 .winbox {
   position: fixed;
   top: 14%;
@@ -31,6 +46,7 @@
   will-change: transform, width, height;
   contain: layout size;
   touch-action: none;
+  animation: 1s open;
 }
 .wb-body,
 .wb-header {

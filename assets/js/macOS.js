@@ -1,6 +1,5 @@
 $(function () {
-  $("#terminalBox").not(".wb-header").draggable();
-  $("#terminalBox").resizable();
+  $("#terminalBox").draggable({ handle: ".wb-header" });
 
   $(".wb-close").click(function () {
     $("#terminalBox").css("display", "none");

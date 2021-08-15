@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: rahulthapa.com.np
+Token: eb26cb8aeea734e64eee8fdaed167e194de3b0490dc1cd9e304895157ea1d270

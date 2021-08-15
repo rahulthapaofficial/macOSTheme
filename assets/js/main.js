@@ -80,28 +80,6 @@ let weeks = [
   },
 ];
 
-const nextTerminalLine = `<p>rahulthapa@macOS:~<input type="text" id="userCommand" class="terminalCommandInput ml-5" autofocus autocomplete="off"></p>`;
-
-const terminalHelpText =
-  "<p style='color: #168dcc'>Use :help to show macOS commands</p>";
-
-const userInfoField = `<p>userInfo> What is your Name?:<input type="text" id="userName" class="terminalCommandInput ml-5" autofocus autocomplete="off"></p>`;
-
-const terminalMapSection = `<div id="terminalMapSection">
-      <div id="terminalMap"></div>
-      <input type="hidden" class="form-control" id="lat">
-      <input type="hidden" class="form-control" id="lng">
-  </div>`;
-
-const terminalCommands = {
-  clear: "To clear the screen",
-  ipconfig: "To get Public IP",
-  time: "To get Current Time",
-  whoami: "To get Your Information",
-  whereami: "To get Your Current Location",
-  exit: "To close terminal",
-};
-
 document.addEventListener(
   "contextmenu",
   (event) => {
